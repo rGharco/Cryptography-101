@@ -1,35 +1,31 @@
+constSpecialCharacters = {"!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", " "}
+
 def caesarEncryption(message="",key=0):
     encryptedMessage = ""
     for i in message:
-        currentCharBinary = bytes(str(i).lower(), 'utf-8')
-        if i == " ":
+        # We want the ASCII code for the character that is why we convert to bytes first and then use indexing
+        # We make all letters in lower to reduce complexity and treating two separate ranges of letters at once
+        currentCharASCII = bytes(str(i).lower(), 'utf-8')
+        
+        if i in constSpecialCharacters:
             encryptedMessage += i
-        elif (currentCharBinary[0] + key) > 122:
-            indexDifference = 122 - currentCharBinary[0]
+            continue
+            
+        # The ASCII code range for letters is A=65 and z=122, the check is so that we dont get characters like {}[]% etc
+        # if the current letter + the key is bigger than 122 (e.g in the case of y + 3)
+        elif (currentCharASCII[0] + key) > 122:
             if i == str(i).lower():
                 i = 'a'
             else:
                 i = 'A'
-            i = chr(ord(i)+(3-indexDifference-1))
+            i = chr(ord(i)+(key-currentCharASCII[0] % 122-1))
         else:
             i = chr(ord(i)+key)
         
         encryptedMessage += i
         
-    return print(f"The encrypted message is:{encryptedMessage}")
+    return encryptedMessage
 
 print("[==================================================================================]\n")
 
-message = input("Enter your message: ")
-key = int(input("Enter key value (int): "))
-print("\nEncryption Algorithms: \n1. Caesar 2.Unknown 3.Unknown")
-choice = int(input("\nEnter what encryption algorithm to use (1-3): \n"))
-
-encryptionAlgorithms = {
-    1: caesarEncryption(message,key),
-    2: "Unknown",
-    3: "Unknown",
-}
-encryptionAlgorithms.get(choice)
-
-print("\n[==================================================================================]")
+print(caesarEncryption("Z bc!",4))
