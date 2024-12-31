@@ -24,7 +24,7 @@ print("\n[======================================================================
 
 message = str(input("Enter a message: "))
 key = int(input("Enter a numerical key: "))
-print("\nCaesar Encryption: ", caesarEncryption(message,key))
+print("\nCipher: ", caesarEncryption(message,key))
 
 
 print("\n[==================================================================================]\n")
