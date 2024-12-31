@@ -1,12 +1,22 @@
-# OVERVIEW
-This project aims to address historical and ,in time, even modern cryptographic algorithms and ciphers.
+# Cryptographic Algorithms in Code
 
-# PURPOSE
-As for now this project's only purpose is education, and understanding how to develop scripts that can replicate what was used in the past and therefore get a better understanding of how ciphers work.
+## 🧩 Overview
+This project showcases the implementation of classical cryptographic algorithms as they serve as foundation for understanding modern cryptographic techniques.
 
-# HOW IT WORKS
-Firstly creating the algorithm is key, thus when approaching a new cipher or encryption/hashing, the first step is to understand how it works and then after that creating a method to break it. 
+## 🎯 Purpose
+- To **educate** and provide insight into how classical ciphers work.
+- To demonstrate the **implementation** of these algorithms in code.
 
-# TRYING FOR YOURSELF
-For now that is out of bounds, the scripts have no real complexity and you can easily take them and run them yourself to see what they do. 
+## 📜 Included Algorithms
+1. **Caesar Cipher**: A substitution cipher that shifts characters by a fixed number of positions.
+2. **Vigenère Cipher**: A polyalphabetic substitution cipher that uses a keyword for encryption and decryption.
 
+## 🚀 Getting Started
+### Prerequisites
+- Basic programming knowledge.
+- Familiarity with the concepts of encryption and decryption.
+
+### Running the Code
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/crypto-algorithms.git
