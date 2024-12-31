@@ -19,4 +19,4 @@ This project showcases the implementation of classical cryptographic algorithms 
 ### Running the Code
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/crypto-algorithms.git
+   git clone https://github.com/rGharco/Cryptography-101.git
